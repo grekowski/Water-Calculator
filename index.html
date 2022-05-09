@@ -1,0 +1,1549 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimal-ui">
+	</head>
+	<body>
+		<progress id="progress" class="cw-wsc-progressbar" value="1" max="100"></progress>
+		
+		<div class="cw-wsc-wrapper">
+			
+			<form id="start" class="cw-wsc-show">
+				<main>
+					<h1>Water saving calculator</h1>
+					<p>
+						Answer these quick and easy questions to discover your household’s water and energy usage.
+						<br><br>
+						<b>Terms and Conditions</b><br>
+						The details you provide will not be used, stored and transmitted to anybody. All water usage values used in the calculator are general averages available for domestic users.
+						<br><br>
+						<b>Your personalised water report</b><br>
+						At the end, you'll get a water report that's tailored to you. It'll show you how much water you're using, how you can save and give you some water-saving ideas.
+					</p>
+					
+					<div class="cw-wsc-question">
+						<p></p>
+						<label><input type="checkbox" name="s00-q01" value="1" required>Please tick to show that you have read, understood and accepted the terms and conditions, in order to continue using the water saving calculator.</label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="submit">Start</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/coffee-mobile.svg">
+				</aside>
+			</form>
+			
+			<form id="house">
+				<main>
+					<h1>Your home</h1>
+					
+					<div class="cw-wsc-question">
+						<p>What type of property do you live in?</p>
+						<label class="col-50"><input type="radio" name="s01-q01" value="1" required>Flat</label>
+						<label class="col-50"><input type="radio" name="s01-q01" value="2" required>Terraced</label>
+						<label class="col-50"><input type="radio" name="s01-q01" value="3" required>Detached</label>
+						<label class="col-50"><input type="radio" name="s01-q01" value="4" required>Semi-Detached</label>
+						<label class="col-50"><input type="radio" name="s01-q01" value="5" required>Other</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>How many people live in the household?</p>
+						<label class="col-33 col-center"><input type="number" name="s01-q02" value="1" min="1" max="10" data-water="949" data-electric="0" required>Adults</label>
+						<label class="col-33 col-center"><input type="number" name="s01-q03" value="0" min="0" max="10" data-water="949" data-electric="0" required>Children under 18</label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-home.png">
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="home">
+				<main>
+					<h1>Your home</h1>
+					<div class="cw-wsc-question">
+						<p>Do you have a water meter?</p>
+						<label class="col-33"><input type="radio" name="s02-q01" value="1" required>Yes</label>
+						<label class="col-33"><input type="radio" name="s02-q01" value="2" required>No</label>
+						<label class="col-33"><input type="radio" name="s02-q01" value="3" required>I don't know</label>
+						<div class="comment cw-wsc-report-exclude"></div>
+					</div>
+					<div class="cw-wsc-question">
+						<p>How do you heat your water?</p>
+						<label class="col-50"><input type="radio" name="s02-q02" value="1" required>Electricy</label>
+						<label class="col-50"><input type="radio" name="s02-q02" value="2" required>Gas</label>
+						<label class="col-50"><input type="radio" name="s02-q02" value="3" required>Solid Fuel</label>
+						<label class="col-50"><input type="radio" name="s02-q02" value="3" required>Oil</label>
+						<label class="col-50"><input type="radio" name="s02-q02" value="3" required>Biomass</label>
+						<label class="col-50"><input type="radio" name="s02-q02" value="3" required>LPG</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do you have an A rated boiler?</p>
+						<label class="col-33"><input type="radio" name="s02-q03" value="1" required>Yes</label>
+						<label class="col-33"><input type="radio" name="s02-q03" value="2" required>No</label>
+						<label class="col-33"><input type="radio" name="s02-q03" value="3" required>Don't know</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Does your home have any dripping taps?</p>
+						<label class="col-33"><input type="radio" name="s02-q04" value="1" data-water="2555" data-electric="0" required>Yes</label>
+						<label class="col-33"><input type="radio" name="s02-q04" value="2" data-water="0" data-electric="0" required>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-home.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="kitchen">
+				<main>
+					<h1>Kitchen</h1>
+					<div class="cw-wsc-question">
+						<p>How many times do you use your washing machine per week?</p>
+						<label class="col-33 col-center"><input type="number" name="s03-q01" value="0" min="0" max="14" data-water="2600" data-electric="0" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>What temperature do you generally wash your clothes at?</p>
+						<label class="col-25"><input type="radio" name="s03-q02" value="1" data-water="0" data-electric="23" required disabled>30</label>
+						<label class="col-25"><input type="radio" name="s03-q02" value="2" data-water="0" data-electric="30" required disabled>40</label>
+						<label class="col-25"><input type="radio" name="s03-q02" value="3" data-water="0" data-electric="50" required disabled>60</label>
+						<label class="col-25"><input type="radio" name="s03-q02" value="4" data-water="0" data-electric="83" required disabled>90</label>
+						<div class="comment cw-wsc-report-exclude"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you have an A rated washing machine?</p>
+						<label class="col-33"><input type="radio" name="s03-q03" value="0" required disabled>Yes</label>
+						<label class="col-33"><input type="radio" name="s03-q03" value="1" data-water="0" data-electric="5" required disabled>No</label>
+						<label class="col-33"><input type="radio" name="s03-q03" value="1" data-water="0" data-electric="5" required disabled>Don't know</label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you fully load the washing machine before using it?</p>
+						<label class="col-25"><input type="radio" name="s03-q04" value="1" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s03-q04" value="2" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-kitchen-1.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="dishwasher">
+				<main>
+					<h1>Kitchen</h1>
+					<div class="cw-wsc-question">
+						<p>How many times do you use your dishwasher per week? If you do not own or use a dishwasher enter '0'.</p>
+						<label><input type="number" name="s04-q01" value="0" min="0" max="25" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you have an A rated dishwasher?</p>
+						<label class="col-33"><input type="radio" name="s04-q02" value="1" data-water="780" data-electric="0" data-multiply="s04-q01" required disabled>Yes</label>
+						<label class="col-33"><input type="radio" name="s04-q02" value="1" data-water="1144" data-electric="0" data-multiply="s04-q01" required disabled>No</label>
+						<label class="col-33"><input type="radio" name="s04-q02" value="1" data-water="1144" data-electric="0" data-multiply="s04-q01" required disabled>Don't know</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you typically use the eco setting? (If dishwasher is post 2000)</p>
+						<label class="col-25"><input type="radio" name="s04-q03" value="1" data-water="0" data-electric="0" data-multiply="s04-q01" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s04-q03" value="1" data-water="0" data-electric="0" data-multiply="s04-q01" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you fully load the dishwasher before using it?</p>
+						<label class="col-25"><input type="radio" name="s04-q04" value="1" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s04-q04" value="2" required  disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-kitchen-2.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="sink">
+				<main>
+					<h1>Kitchen</h1>
+					<div class="cw-wsc-question">
+						<p>How many times does your household wash up by hand each week?</p>
+						<label><input type="number" name="s05-q01" value="0" min="0" max="50" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you use a bowl or sink with a plug for washing up?</p>
+						<label class="col-25"><input type="radio" name="s05-q02" value="1" data-water="551" data-electric="0" data-multiply="s05-q01" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s05-q02" value="2.596" data-water="551" data-electric="0" data-multiply="s05-q01" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>What is the flow rate of your taps?</p>
+						<label class="col-50"><input type="radio" name="s05-q03" value="1" required disabled>Fast</label>
+						<label class="col-50"><input type="radio" name="s05-q03" value="1" required disabled>Medium</label>
+						<label class="col-50"><input type="radio" name="s05-q03" value="1" required disabled>Slow</label>
+						<label class="col-50"><input type="radio" name="s05-q03" value="1" required disabled>Don't know</label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-kitchen-3.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+			
+			<form id="kettle">
+				<main>
+					<h1>Kitchen</h1>
+					<div class="cw-wsc-question">
+						<p>How many times does your household use the kettle each day?</p>
+						<label><input type="number" name="s06-q01" value="0" min="0" max="35" data-water="365" data-electric="0" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you fill the kettle up every time you use it?</p>
+						<label class="col-25"><input type="radio" name="s06-q02" value="1" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s06-q02" value="2" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question">
+						<p>How many minutes do you spend washing food? E.g. rice, veg, fruit per day</p>
+						<label><input type="number" name="s06-q03" value="0" min="0" max="30" data-water="365" data-electric="0" required></label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>When washing food do you wash under a running tap or use a bowl?</p>
+						<label class="col-33"><input type="radio" name="s06-q04" value="1" data-water="2555" data-electric="0" data-multiply="s06-q03" required>Running tap</label>
+						<label class="col-33"><input type="radio" name="s06-q04" value="0" data-water="0" data-electric="0" data-multiply="s06-q03" required>Bowl</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-kitchen-4.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="bathroom">
+				<main>
+					<h1>Bathroom</h1>
+					<div class="cw-wsc-question">
+						<p>How many baths does your household take per week?</p>
+						<label><input type="number" name="s07-q01" value="0" min="0" max="280" required></label>
+						<div class="comment cw-wsc-display-exclude"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you fill the bath up to the top?</p>
+						<label class="col-33"><input type="radio" name="s07-q02" value="2" data-water="2600" data-electric="1" data-multiply="s07-q01" required disabled>Yes</label>
+						<label class="col-33"><input type="radio" name="s07-q02" value="1" data-water="2600" data-electric="2" data-multiply="s07-q01" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do you leave the tap running when you clean your teeth?</p>
+						<label class="col-33"><input type="radio" name="s07-q03" value="16" data-water="292" data-electric="1" data-multiply="s07-q01" required>Yes</label>
+						<label class="col-33"><input type="radio" name="s07-q03" value="1" data-water="292" data-electric="2" data-multiply="s07-q01" required>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do you leave the tap running when shaving?</p>
+						<label class="col-33"><input type="radio" name="s07-q04" value="5.438" data-water="329" data-electric="1" data-multiply="s07-q01" required>Yes</label>
+						<label class="col-33"><input type="radio" name="s07-q04" value="1" data-water="329" data-electric="2" data-multiply="s07-q01" required>No</label>
+						<label class="col-33"><input type="radio" name="s07-q04" value="0" data-water="0" data-electric="0" required>N/A</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-bathroom-1.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="showers">
+				<main>
+					<h1>Bathroom</h1>
+					<div class="cw-wsc-question">
+						<p>How many showers are in your household?</p>
+						<label><input type="number" name="s08-q01" value="0" min="0" max="30" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Is your shower mains fed or loft tank fed?</p>
+						<label class="col-33"><input type="radio" name="s08-q02" value="1" required disabled>Mains fed</label>
+						<label class="col-33"><input type="radio" name="s08-q02" value="2" required disabled>Loft tank fed</label>
+						<label class="col-33"><input type="radio" name="s08-q02" value="3" required disabled>Don't know</label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How many times per week does your household use these showers?</p>
+						<label><input type="number" name="s08-q04" value="0" min="0" max="100" required disabled></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How many minutes, on average, does one shower last?</p>
+						<label><input type="number" name="s08-q05" value="0" min="0" max="180" data-water="520" data-electric="0" data-multiply="s08-q04" required disabled></label>
+						<div class="comment cw-wsc-display-exclude"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-bathroom-2.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="toilet">
+				<main>
+					<h1>Bathroom</h1>
+					<div class="cw-wsc-question">
+						<p>How many toilets does your household have?</p>
+						<label><input type="number" name="s09-q01" value="0" min="0" max="100" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you use a toilet cistern device (save-a-flush)?</p>
+						<label class="col-25"><input type="radio" name="s09-q02" value="1" data-water="11863" data-electric="0" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s09-q02" value="1" data-water="13688" data-electric="0" required disabled>No</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do you think you may have a leaky loo?</p>
+						<label class="col-25"><input type="radio" name="s09-q03" value="1" data-water="77380" data-electric="0" required>Yes</label>
+						<label class="col-25"><input type="radio" name="s09-q03" value="2" data-water="0" data-electric="0" required>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Other water used for personal washing.</p>
+						<label class="col-33 col-center"><input type="number" name="s09-q04" value="0" min="0" max="200" data-water="520" data-electric="0" required>Full sink a week</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-bathroom-3.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="garden">
+				<main>
+					<h1>Outside the home</h1>
+					<div class="cw-wsc-question">
+						<p>Do you have a garden/outside space?</p>
+						<label class="col-25"><input type="radio" name="s10-q01" value="1" required>Yes</label>
+						<label class="col-25"><input type="radio" name="s10-q01" value="0" required>No</label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>Do you use a water butt in your garden?</p>
+						<label class="col-25"><input type="radio" name="s10-q02" value="1" required disabled>Yes</label>
+						<label class="col-25"><input type="radio" name="s10-q02" value="2" required disabled>No</label>
+						<div class="comment"></div>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How many times per month do you use these during summer?</p>
+						<label class="col-33 col-center col-mr"><input type="number" name="s10-q03" value="0" min="0" max="100" data-water="13" data-electric="0" data-multiply="s10-q02" required disabled>Open hosepipe</label>
+						<label class="col-33 col-center col-mr"><input type="number" name="s10-q04" value="0" min="0" max="100" data-water="1500" data-electric="0" required disabled>Sprinkler</label><br>
+						<label class="col-33 col-center col-mr"><input type="number" name="s10-q05" value="0" min="0" max="100" data-water="12" data-electric="0" data-multiply="s10-q02" required disabled>Hosepipe trigger</label>
+						<label class="col-33 col-center col-mr"><input type="number" name="s10-q06" value="0" min="0" max="100" data-water="23" data-electric="0" data-multiply="s10-q02" required disabled>Watering can</label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-outside-space-1.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="car">
+				<main>
+					<h1>Outside the home</h1>
+					<div class="cw-wsc-question">
+						<p>How often do you wash your car/bike/other per year?</p>
+						<label><input type="number" name="s11-q01" value="0" min="0" max="75" required></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How do you wash your car/bike?</p>
+						<label class="col-50"><input type="radio" name="s11-q03" value="1" data-water="42" data-electric="0" data-multiply="s11-q01" required disabled>Bucket</label>
+						<label class="col-50"><input type="radio" name="s11-q03" value="1" data-water="246" data-electric="0" data-multiply="s11-q01" required disabled>Trigger hose</label>
+						<label class="col-50"><input type="radio" name="s11-q03" value="1" data-water="270" data-electric="0" data-multiply="s11-q01" required disabled>Hose</label>
+						<label class="col-50"><input type="radio" name="s11-q03" value="1" data-water="270" data-electric="0" data-multiply="s11-q01" required disabled>Pressure washer</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do you use a pressure washer to wash your patio/drive?</p>
+						<label class="col-25"><input type="radio" name="s11-q04" value="1" data-water="270" data-electric="0" required>Yes</label>
+						<label class="col-25"><input type="radio" name="s11-q04" value="0" data-water="0" data-electric="0" required>No</label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>How often do you fill a paddling pool or pond per year?</p>
+						<label><input type="number" name="s11-q05" value="0" min="0" max="50" data-water="315" data-electric="0" required></label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-outside-space-2.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="away">
+				<main>
+					<h1>Away from the home</h1>
+					<div class="cw-wsc-question">
+						<p>On average how many days per week does your entire household spend outside the home? (e.g. at work, the gym, days out)</p>
+						<label><input type="number" name="s12-q01" value="0" min="0" max="7" data-water="52" data-electric="0" required></label>
+					</div>
+					<div class="cw-wsc-question">
+						<p>Do they regularly use a gym, hotel or office shower?</p>
+						<label class="col-25"><input type="radio" name="s12-q02" value="1" required>Yes</label>
+						<label class="col-25"><input type="radio" name="s12-q02" value="0" required>No</label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How many showers does your household have elsewhere each week?</p>
+						<label><input type="number" name="s12-q03" value="0" min="0" max="35" required disabled></label>
+					</div>
+					<div class="cw-wsc-question conditional">
+						<p>How many minutes on average, does one shower last?</p>
+						<label><input type="number" name="s12-q04" value="0" min="0" max="60" data-water="624" data-electric="0" data-multiply="s12-q03" required disabled></label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-away-from-home-1.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="carwash">
+				<main>
+					<h1>Away from the home</h1>
+					<div class="cw-wsc-question">
+						<p>How often do they use a commercial car wash per year?</p>
+						<label class="col-33 col-center col-mr"><input type="number" name="s13-q01" value="0" min="0" max="50" data-water="270" data-electric="0" required>Auto car wash</label>
+						<label class="col-33 col-center col-mr"><input type="number" name="s13-q02" value="0" min="0" max="50" data-water="42" data-electric="0" required>Hand wash</label>
+						<label class="col-33 col-center col-mr"><input type="number" name="s13-q03" value="0" min="0" max="50" data-water="270" data-electric="0" required>Pressure washer</label>
+					</div>
+					<div class="cw-wsc-buttons">
+						<button type="reset">Back</button>
+						<button type="submit">Next</button>
+					</div>
+				</main>
+				<aside>
+					<img src="images/tooltip-away-from-home-2.png">
+					<!--<input type="text" value="0" readonly name="energy-usage">Energy usage (kWh) per year-->
+					<div class="cw-wsc-total">
+						<div class="cw-wsc-total__clock">
+							<span class="D1">0</span>
+							<span class="D2">0</span>
+							<span class="D3">0</span>
+							<span class="D4">0</span>
+							<span class="D5">0</span>
+							<span class="D6">0</span>
+						</div>
+						<div>Water usage (L) per year</div>
+					</div>
+				</aside>
+			</form>
+		
+			<form id="report">
+				<main>
+					<h1>Your personalised water report</h1>
+					<p>
+						Based on the answers you have provided, we are pleased to provide you with your own personalised water usage report.<br>
+						On this page, you can:
+					</p>
+					<ul>
+						<li>View a breakdown of your water usage habits, both inside & outside the home.</li>
+						<li>Review and adjust your most significant water usage areas and see how much you can save by changing your behaviour.</li>
+						<li>Download a copy of your water usage report.</li>
+					</ul>
+					
+					<h2>Your water consumption at home (litres/person/day)</h2>
+					<p>
+						Average usage <span id="avg_usage"></span><br>
+						Your current usage <span id="cur_usage"></span><br>
+						Your potential usage <span id="pot_usage"></span>
+					</p>
+					
+					<h2>Your current water usage by activity</h2>
+					<p>
+						Washing Machine <span id="per_washingmashine"></span><br>
+						Hand Washing Dishes <span id="per_dishes"></span><br>
+						Dishwasher <span id="per_dishwasher"></span><br>
+						Taps (all others) <span id="per_taps"></span><br>
+						Toilet <span id="per_toilet"></span><br>
+						Baths <span id="per_baths"></span><br>
+						Showers <span id="per_showers"></span><br>
+						Outdoors <span id="per_outdoors"></span><br>
+						Car washing away <span id="per_car_away"></span><br>
+						Toilet &amp; tap use away <span id="per_toilet_away"></span><br>
+						Showers away <span id="per_showers_away"></span>
+					</p>
+					
+					<h2>Water saving advice</h2>
+					<p id="report_tips"></p>
+					
+				</main>
+				
+			</form>
+			
+			<div class="cw-wsc-footnote">
+				Provided by <img src="https://www.cleverwater.ie/static/logo-full-box.svg" width="147.85" height="31.5"></div>
+		</div>
+		<style>
+			:root {
+				--primary: #6200EE;
+				--primary-variant: #3700B3;
+				--secondary: #03DAC6;
+				--secondary-variant: #018786;
+			}
+			* {
+				box-sizing: border-box;
+				
+			}
+			html, body {
+				padding: 0;
+				margin: 0;
+			}
+			.cw-wsc-total {
+				display: block;
+				text-align: center;
+			}
+			.cw-wsc-total__clock {
+				background-color: var(--primary);
+				
+				font-family: sans-serif;
+				font-size: 1.2rem;
+				line-height: 1.2rem;
+				font-weight: bold;
+				text-align: center;
+				
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				
+				padding: 0.3em 0.9em;
+				border-radius: 1.5em;
+				margin-top: 1em;
+				margin-bottom: 0.4em;
+			}
+			.cw-wsc-total__clock > span {
+				
+				text-align: center;
+				
+				color: cornflowerblue;
+				background-color: #FFFFFF;
+				border-radius: 4px;
+				
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				
+				width: 0.95em;
+				height: 1.4em;
+				margin: 1px;
+				padding: 0px;
+			}
+			
+			.cw-wsc-wrapper {
+				position: relative;
+			}
+			.cw-wsc-wrapper form {
+				display: none;
+				xposition: absolute;
+				xtop: 0;
+				xleft: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+			@keyframes showin {
+				from {opacity: 0}
+				to {opacity: 1}
+			}
+			.cw-wsc-wrapper form.cw-wsc-show {
+				display: flex;
+				flex-wrap: no-wrap;
+				
+				animation: 0.25s showin;
+				animation-fill-mode: forwards;
+			}
+			.cw-wsc-wrapper form main {
+				width: 50%;
+				min-width: 27em;
+				background-color: #FFFFFF;
+				font-weight: bold;
+			}
+			.cw-wsc-wrapper form aside {
+				flex-grow: 1;
+				background-color: #FFFFFF;
+			}
+			.cw-wsc-wrapper .cw-wsc-footnote {
+				font-size: 0.9em;
+				display: flex;
+				align-items: center;
+				padding: 0.5em;
+			}
+			.cw-wsc-wrapper .cw-wsc-footnote img {
+				height: 1.4em;
+				width: auto;
+				margin-left: 0.9em;
+			}
+			.cw-wsc-wrapper form aside img {
+				width: 80%;
+				height: auto;
+				display: block;
+				margin: auto;
+				border: 10px solid var(--primary);
+				border-radius: 50%;
+			}
+			.cw-wsc-wrapper form#start aside img {
+				border-radius: unset;
+				border: none;
+			}
+			.cw-wsc-wrapper form aside input {
+				border: solid 10px yellow;
+				border-radius: 2em;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question p {
+				width: 100%;
+				margin-top: 2em;
+				margin-bottom: 0.2em;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question > label {
+				display: inline-block;
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question .comment {
+				background-color: #d9f1fa;
+				border: thin solid #009fdf;
+				border-radius: 4px;
+				font-weight: normal;
+				font-size: 0.95em;
+				margin: 0 1em;
+				padding: 0.5em;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question .comment:empty {
+				display: none;
+			}
+			.cw-wsc-wrapper form > main > .cw-wsc-question .comment.cw-wsc-display-exclude {
+				display: none;
+			}
+			.cw-wsc-wrapper .col-25 {
+				min-width: 23%;
+			}
+			.cw-wsc-wrapper .col-33 {
+				width: 9em;
+				max-width: 33%;
+				__margin-right: calc(40% - 9em);
+			}
+			.cw-wsc-wrapper .col-50 {
+				min-width: 40%;
+			}
+			.cw-wsc-wrapper .col-center {
+				text-align: center;
+			}
+			.cw-wsc-wrapper .col-mr {
+				margin-right: 3em;
+			}
+			.cw-wsc-wrapper .cw-wsc-question.conditional {
+				display: none;
+			}
+			.cw-wsc-wrapper .cw-wsc-question.conditional.show {
+				display: block;
+			}
+			.cw-wsc-progressbar {
+				width: calc(100% - 2em);
+				margin: 1em 1em;
+			}
+			.cw-wsc-buttons {
+				display: flex;
+				justify-content: space-between;
+				margin: 2em 0;
+			}
+			.cw-wsc-wrapper button {
+				-webkit-appearance: button;
+				
+				color: #fff;
+				font-size: 1em;
+				font-weight: 700;
+				text-align: center;
+				cursor: pointer;
+				user-select: none;
+				min-width: 10em;
+				padding: 0.7em 1.5em;
+				background-color: var(--secondary);
+				border: solid 2px var(--secondary);
+				
+				border-radius: 2em;
+				transition: all 0.18s ease-in-out;
+			}
+			.cw-wsc-wrapper button:hover {
+				background-color: var(--secondary-variant);
+				border-color: var(--secondary-variant);
+			}
+			.cw-wsc-wrapper button[type=reset] {
+				background-color: transparent;
+				color: var(--secondary);
+			}
+			.cw-wsc-wrapper button[type=reset]:hover {
+				background-color: transparent;
+				color: var(--secondary-variant);
+			}
+			.cw-wsc-wrapper label button[type=button] {
+				width: 2em;
+				height: 2em;
+				display: inline-block;
+				padding: 0;
+				min-width: unset;
+			}
+			.cw-wsc-wrapper label button[type=button] {
+				
+			}
+			.cw-wsc-wrapper label input[type=number]{
+				text-align: center;
+				padding: 0.5em 0;
+				width: 4em;
+				border: thin solid #bbb;
+				border-radius: 4px;
+				margin: 0.4em 0.4em;
+			}
+			.cw-wsc-wrapper form#report main {
+				width: 100%;
+			}
+			.cw-wsc-wrapper #report_tips {
+				column-count: 2
+			}
+			.cw-wsc-wrapper #report_tips p {
+				border: solid thin var(--primary);
+				display: inline-block;
+				padding: 1em;
+			}
+			
+			@media only screen and (max-width: 700px) {
+				
+				.cw-wsc-wrapper form.cw-wsc-show {
+					flex-wrap: wrap;
+				}
+				.cw-wsc-wrapper form main {
+					width: 100%;
+					min-width: unset;
+				}
+				.cw-wsc-wrapper form aside {
+					width: 100%;
+				}
+				.cw-wsc-buttons {
+					justify-content: space-around;
+				}
+				.cw-wsc-wrapper form aside img {
+					display: none;
+				}
+				.cw-wsc-wrapper form#start aside img {
+					border-radius: unset;
+					border: none;
+				}
+				
+			}
+			@media only screen and (max-width: 576px) {
+				.cw-wsc-wrapper form > main > .cw-wsc-question > label {
+					display: block;
+				}
+				.cw-wsc-wrapper .col-50 {
+					width: 100%;
+				}
+				.cw-wsc-wrapper .col-33 {
+					max-width: 50%;
+					xxwidth: 50%;
+					margin-right: 45%;
+				}
+				.cw-wsc-buttons {
+					flex-wrap: wrap;
+				}
+				.cw-wsc-wrapper button {
+					min-width: 90%;
+				}
+				.cw-wsc-wrapper button[type=reset] {
+					order: 2;
+					margin-top: 2em;
+				}
+				.cw-wsc-wrapper #report_tips {
+					column-count: 1;
+				}
+			}
+		</style>
+		<script>
+			
+			function pad(num, size){return ('000000000' + num).substr(-size); }
+			
+			function addPlusMinus(){
+				
+				// Find all input elements with type number selectors
+				document.querySelectorAll("input[type=number]").forEach(function(el){
+					
+					// Create and insert minus button before the field
+					//
+					var minusBTN = document.createElement('button');
+					minusBTN.className = "cw-wsc-decrease";
+					minusBTN.type = "button";
+					minusBTN.innerHTML = '-';
+					
+					el.parentNode.insertBefore(minusBTN, el);
+					
+					
+					// Create and insert minus button after the field
+					//
+					var plusBTN = document.createElement('button');
+					plusBTN.className = "cw-wsc-increase";
+					plusBTN.type = "button";
+					plusBTN.innerHTML = '+';
+					
+					el.parentNode.insertBefore(plusBTN, el.nextSibling);
+					
+				});
+				
+				
+				// Attach event listener to all minus uttons
+				document.querySelectorAll(".cw-wsc-decrease").forEach(function(el){
+					
+					el.addEventListener("click", function(e){
+						
+						// Get current and minimum value
+						var current = parseInt(e.target.nextSibling.value);
+						var min = parseInt(e.target.nextSibling.min);
+						
+						// If current is greater than minimum, decrease by 1
+						if(current > min){
+							e.target.nextSibling.value = current - 1;
+							
+							// Trigger change event to initialise calculations
+							var ev = new Event("change");
+							e.target.nextSibling.dispatchEvent(ev);
+							
+						}
+						
+					});
+					
+				});
+				
+				// Attach event listener to all plus uttons
+				document.querySelectorAll(".cw-wsc-increase").forEach(function(el){
+					
+					el.addEventListener("click", function(e){
+						
+						// Get current and maximum value
+						var current = parseInt(e.target.previousSibling.value);
+						var max = parseInt(e.target.previousSibling.max);
+						
+						// If current is less than maximum, increase by 1
+						if(current < max){
+							e.target.previousSibling.value = current + 1;
+							
+							// Trigger change event to initialise calculations
+							var ev = new Event("change");
+							e.target.previousSibling.dispatchEvent(ev);
+							
+						}
+						
+					});
+					
+				});
+				
+			}
+			
+			function setProgress(){
+				
+				// Get progress selector into a variable
+				var progress = document.querySelector("#progress");
+				
+				// Get all forms into a variable
+				var allForms = document.querySelectorAll(".cw-wsc-wrapper > form");
+				
+				// Set initial count of visible forms to default 0
+				var visibleForms = 0;
+				
+				
+				// Loop through all forms
+				for (var i = 0; i < allForms.length; i++){
+					
+					// Check if the form contains class "cw-wsc-show"
+					if(allForms[i].classList.contains("cw-wsc-show")){
+						
+						// Get index of that form 
+						visibleForms = i;
+						
+					}
+				}
+				
+				// Set max and current value of the progress line
+				progress.setAttribute("max",allForms.length-1);
+				progress.setAttribute("value",visibleForms);
+				
+			}
+
+			function calculate(){
+				
+				// Initialise variable
+				var output = new Object(),
+					thisWaterUsage = 0;
+				
+				// Set default calculations to 0
+				output.totalWaterUsage = 0,
+				output.sub_total_washingmashine = 0,
+				output.sub_total_baths = 0,
+				output.sub_total_dishes = 0,
+				output.sub_total_dishwasher = 0,
+				output.sub_total_showers = 0,
+				output.sub_total_toilet = 0,
+				output.sub_total_taps = 0,
+				output.sub_total_outdoors = 0,
+				output.sub_total_car_away = 0,
+				output.sub_total_toilet_away = 0,
+				output.sub_total_showers_away = 0;
+				
+				
+				// Find all input selectors
+				document.querySelectorAll("input").forEach(function(el){
+					
+					// Check if element is Not-Disabled + Value is a number + data-water is set
+					if(!isNaN(el.value) && typeof el.dataset.water !== 'undefined' && !el.disabled){
+						/*
+						console.log(el.name);
+						console.log(el.type);
+						console.log(el.value);
+						console.log(el.checked);
+						console.log(el.dataset.water);
+						console.log(el.disabled);
+						*/
+						
+						// if type is radio and checked OR non-radio
+						if ((el.type == "radio" && el.checked == true) || el.type != "radio") {
+							
+							// check if data-multiply is set
+							if(typeof el.dataset.multiply !== 'undefined') {
+								
+								// if the selected multiply is a type of radio, get value of the selected one
+								// else get direct value
+								if (document.querySelector("input[name=" + el.dataset.multiply + "]").type == "radio") {
+									
+									var multiplicator = document.querySelector("input[name=" + el.dataset.multiply + "]:checked").value;
+									
+								} else {
+									
+									var multiplicator = document.querySelector("input[name=" + el.dataset.multiply + "]").value;
+								}
+								
+								// calculate usage of the multiplied field
+								thisWaterUsage = parseInt(parseFloat(el.value) * (parseInt(el.dataset.water) * parseInt(multiplicator)));
+								
+							} else {
+								
+								// calculate usage of the single field
+								thisWaterUsage = parseInt(parseFloat(el.value) * parseInt(el.dataset.water));
+								
+							}
+							
+							
+							// Calculate sub totals by area of activity
+							//
+							if(["s01-q02","s01-q03","s02-q04","s06-q01","s06-q03","s06-q04"].includes(el.name)){
+								output.sub_total_taps += thisWaterUsage;
+							} else if(["s03-q01"].includes(el.name)){
+								output.sub_total_washingmashine += thisWaterUsage;
+							} else if(["s04-q02","s04-q03"].includes(el.name)){
+								output.sub_total_dishwasher += thisWaterUsage;
+							} else if(["s05-q02"].includes(el.name)){
+								output.sub_total_dishes += thisWaterUsage;
+							} else if(["s07-q02","s07-q03","s07-q04"].includes(el.name)){
+								output.sub_total_baths += thisWaterUsage;
+							} else if(["s08-q05"].includes(el.name)){
+								output.sub_total_showers += thisWaterUsage;
+							} else if(["s09-q02","s09-q03","s09-q04"].includes(el.name)){
+								output.sub_total_toilet += thisWaterUsage;
+							} else if(["s10-q03","s10-q04","s10-q05","s10-q06","s11-q03","s11-q04","s11-q05"].includes(el.name)){
+								output.sub_total_outdoors += thisWaterUsage;
+							} else if(["s12-q01"].includes(el.name)){
+								output.sub_total_toilet_away += thisWaterUsage;
+							} else if(["s12-q04"].includes(el.name)){
+								output.sub_total_showers_away += thisWaterUsage;
+							} else if(["s13-q01","s13-q02","s13-q03"].includes(el.name)){
+								output.sub_total_car_away += thisWaterUsage;
+							}
+							
+							// Calculate total usage
+							//
+							output.totalWaterUsage += thisWaterUsage;
+							
+						}
+						
+					}
+					
+				});
+				
+				
+				// Get count of all people in the house
+				output.person_count = parseInt(document.querySelector("input[name=s01-q02]").value) + parseInt(document.querySelector("input[name=s01-q03]").value);
+				
+				
+				// Set current total usage in each form screen, digit by digit
+				//
+				document.querySelectorAll(".cw-wsc-total .D1").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(0, 1);
+				});
+				document.querySelectorAll(".cw-wsc-total .D2").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(1, 2);
+				});
+				document.querySelectorAll(".cw-wsc-total .D3").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(2, 3);
+				});
+				document.querySelectorAll(".cw-wsc-total .D4").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(3, 4);
+				});
+				document.querySelectorAll(".cw-wsc-total .D5").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(4, 5);
+				});
+				document.querySelectorAll(".cw-wsc-total .D6").forEach(function(el){
+					el.innerHTML = pad(output.totalWaterUsage, 6).substring(5, 6);
+				});
+				
+				
+				
+				function setPercentage(subCalc, subEl){
+					
+					if (subCalc > 0 || output.totalWaterUsage > 0) {
+						var subPer = subCalc / output.totalWaterUsage * 100;
+					} else {
+						var subPer = 0;
+					}
+					
+					// Set percentage in the desired section at the final report
+					// rounded to no-decimals
+					document.querySelector(subEl).innerHTML = Math.round(subPer,0) + "%";
+					
+				}
+				
+				
+				// Set final report fields with calculated results
+				//
+				document.querySelector("#avg_usage").innerHTML = "143";
+				document.querySelector("#cur_usage").innerHTML = parseInt(output.totalWaterUsage / output.person_count / 365);
+				document.querySelector("#pot_usage").innerHTML = "70";
+				
+				setPercentage(output.sub_total_washingmashine, "#per_washingmashine");
+				setPercentage(output.sub_total_baths, "#per_baths");
+				setPercentage(output.sub_total_dishes, "#per_dishes");
+				setPercentage(output.sub_total_dishwasher, "#per_dishwasher");
+				setPercentage(output.sub_total_showers, "#per_showers");
+				setPercentage(output.sub_total_toilet, "#per_toilet");
+				setPercentage(output.sub_total_taps, "#per_taps");
+				setPercentage(output.sub_total_outdoors, "#per_outdoors");
+				setPercentage(output.sub_total_car_away, "#per_car_away");
+				setPercentage(output.sub_total_toilet_away, "#per_toilet_away");
+				setPercentage(output.sub_total_showers_away, "#per_showers_away");
+				
+				// in addition, output the results
+				//
+				return output;
+				
+			}
+			
+			function collectTips(){
+				
+				// Set an empty array of tips
+				var tips = [];
+				
+				// Find all comments selectors
+				document.querySelectorAll(".cw-wsc-wrapper .cw-wsc-question .comment").forEach(function(el){
+					
+					// Check if the selector contains anything
+					if(el.innerHTML.length > 0){
+						
+						// Check if selector is not excluded
+						if(!el.classList.contains("cw-wsc-report-exclude")){
+							
+							// add the comment to the array
+							tips.push(el.innerHTML);
+							
+						}
+						
+					}
+					
+				});
+				
+				// Check if array contains any tips
+				//
+				if(tips.length > 0){
+					
+					// Activate empty output variable
+					var report_tips = "";
+					
+					// Loop through all array tips
+					tips.forEach(function(el){
+						
+						// Wrap every tip into a paragraph
+						report_tips += "<p>" + el + "</p>";
+						
+					});
+					
+				} else {
+					
+					// If no tips in the array, display "cheer up" message
+					var report_tips = "<p>You’re doing great here, keep it up!</p>";
+					
+				}
+				
+				// Display the tips output variable in a container
+				document.querySelector(".cw-wsc-wrapper #report_tips").innerHTML = report_tips;
+				
+			}
+			
+			
+			// Next / Previous screen handle
+			//
+			document.querySelectorAll(".cw-wsc-wrapper > form").forEach(function(el, i){
+				
+				// If event is submit
+				//
+				el.addEventListener("submit", function(event){
+					
+					// Stop default action
+					event.preventDefault();
+					
+					// Hide all visible form screens
+					document.querySelectorAll(".cw-wsc-wrapper > form").forEach(function(f){
+						f.classList.remove("cw-wsc-show");
+					});
+					
+					// Unhide next form
+					el.nextElementSibling.classList.add("cw-wsc-show");
+					
+					// scroll to the top
+					window.scrollTo(0, 0);
+					
+					// Update progress line
+					setProgress();
+					
+					// Collect all tips created
+					collectTips();
+					
+				});
+				
+				el.addEventListener("reset", function(event){
+					
+					// Hide all visible form screens
+					document.querySelectorAll(".cw-wsc-wrapper > form").forEach(function(f){
+						f.classList.remove("cw-wsc-show");
+					});
+					
+					// Unhide previous form
+					el.previousElementSibling.classList.add("cw-wsc-show");
+					
+					// scroll to the top
+					window.scrollTo(0, 0);
+					
+					// Clear all comments from the form
+					el.querySelectorAll(".comment").forEach(function(e){
+						e.innerHTML = "";
+					});
+					
+					// Update progress line
+					setProgress();
+				});
+				
+			});
+			
+			
+			// Listen for change in an input field
+			//
+			document.querySelectorAll("input").forEach(function(el){
+				el.addEventListener("change", function(e){
+					
+					// calculate all fields and store the result in a variabla
+					//
+					var summary = calculate();
+					
+					// Check for conditional questions
+					//
+					if(
+						e.target.name == "s03-q01" || 
+						e.target.name == "s04-q01" || 
+						e.target.name == "s05-q01" || 
+						e.target.name == "s06-q01" || 
+						e.target.name == "s07-q01" || 
+						e.target.name == "s08-q01" || 
+						e.target.name == "s09-q01" || 
+						e.target.name == "s10-q01" || 
+						e.target.name == "s11-q01" || 
+						e.target.name == "s12-q02"
+					){
+						
+						// get all conditional questions within that form
+						var conditional = e.target.closest("form").querySelectorAll(".cw-wsc-question.conditional");
+						
+						// check if changed input is non-radio OR checked radio
+						if ((el.type == "radio" && el.checked == true) || el.type != "radio") {
+							
+							// If value is greater or equal than 1
+							// 
+							if(e.target.value >= 1){
+								
+								// for each conditional question
+								conditional.forEach(function(e){
+									
+									// unhide
+									e.classList.add("show");
+									
+									// each input fields within that question
+									// remove disabled attribute
+									var inputs = e.querySelectorAll("input");
+									inputs.forEach(function(i){
+										i.disabled = false;
+									});
+									
+								});
+								
+							} else {
+								
+								// for each conditional question
+								conditional.forEach(function(e){
+									
+									// hide
+									e.classList.remove("show");
+									
+									// each input fields within that question
+									// add disabled attribute
+									var inputs = e.querySelectorAll("input");
+									inputs.forEach(function(i){
+										i.disabled = true;
+									});
+									
+								});
+								
+							}
+							
+						}
+					}
+					
+					
+					// Comments
+					//
+					if(e.target.name == "s02-q01"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value != 1){
+							comment.innerHTML = "Even if you are not metered, your results will show water cost based on a metered tariff so you can compare with your current bill to see if you are better off on a meter.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s02-q04"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 1){
+							comment.innerHTML = "Just one dripping tap can waste up to 9 litres of water each day. You should fix these taps to immediately start saving money and water.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s03-q02"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 1){
+							comment.innerHTML = "That's the ideal temperature to wash your clothes in. Keep it up!";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s03-q04"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 2){
+							comment.innerHTML = "You should always ensure a full load when using the washing machine, to ensure the most efficient use of water during the full cycle.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s04-q04"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 2){
+							comment.innerHTML = "An average dishwasher can use up to 22 litres of water each time it is run. Being water smart and only running your dishwasher when full will ensure the most efficient use of water during each dishwash cycle.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s05-q02"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value != 1){
+							comment.innerHTML = "A running tap uses six litres of water per minute. If you fill a washing-up bowl instead of running the tap, you can reduce the amount of water you use.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s06-q02"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 1){
+							comment.innerHTML = "The average size of a kettle in Ireland is 1.5 litres, compared with 250ml for an average cup of tea - meaning you could save up over a litre of water by only filling your kettle to the required amount.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s06-q04"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 1){
+							comment.innerHTML = "A running tap uses six litres of water per minute. If you wash your food in a bowl instead of under the tap, you can reduce the amount of water you use.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					
+					if(e.target.name == "s07-q01"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value > 0 && e.target.value / summary.person_count > 1){
+							comment.innerHTML = "Reduce the number of baths you have. Each bath can use around 100 litres of water. Could you have fewer baths? If not, try short showers instead.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s07-q02"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 2){
+							comment.innerHTML = "An average bath uses around 80 litres of water but can be much more. By filling the bath up to only the required volume for bathing, you can be water smart and save money.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s07-q03"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value != 1){
+							comment.innerHTML = "A running tap uses six litres of water per minute. By turning off the tap while brushing their teeth, afamily of four could save up to 17,520 litres of water a year.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					if(e.target.name == "s07-q04"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value > 1){
+							comment.innerHTML = "A running tap uses six litres of water per minute. By turning off the tap whilst shaving, an individual could save up to 4,380 litres of water a year.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s08-q05"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value > 4){
+							comment.innerHTML = "Reduce the time spent in the shower. A 5-minute shower uses on average 45 litres of water (that's half a bath), so each minute less in the shower can save around 9 litres.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s09-q03"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 1){
+							comment.innerHTML = "A single leaky loo can waste up to 400 litres of water per day - the equivalent to five full bath tubs.";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+					if(e.target.name == "s10-q02"){
+						var comment = e.target.closest(".cw-wsc-question").querySelector(".comment");
+						if(e.target.value == 2){
+							comment.innerHTML = "Running a hosepipe for just 1 hour can use as much water as a family of four each day - that's up to 17,520 litres of water each year. By swapping this for a water butt, you can be water smart & save money";
+						} else {
+							comment.innerHTML = "";
+						}
+					}
+					
+				});
+			});
+			
+			
+			// check for DOM to be loaded
+			//
+			document.addEventListener('DOMContentLoaded', function(){
+				
+				// Set progress bar
+				//
+				setProgress();
+				
+				// Add plus/minus button to every number input
+				//
+				addPlusMinus();
+				
+			});
+			
+		</script>
+	</body>
+</html>
